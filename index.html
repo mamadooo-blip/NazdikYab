@@ -1,14 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
-   <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<h1>نزدیک یاب</h1><body>
- <p>مکان ها و کسب و کار های اطراف خودت را پیدا کن</p>   
-<input type="text" placeholder="دنبال چه مکانی میگردی؟"
-<button>جستجو</button>
-<button class="register-button">ثبت کسب و کار</button>
+    <title>نزدیک‌یاب</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>نزدیک‌یاب</h1>
+
+    <p>مکان ها و کسب و کار های اطراف خودت را پیدا کن</p>
+
+    <input type="text" id="searchInput" placeholder="دنبال چه مکانی می‌گردی؟">
+
+    <button id="searchButton">جستجو</button>
+
+    <div id="results"></div>
+
+    <button class="register-button">ثبت کسب و کار</button>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const results = document.getElementById('results');
+
+        searchButton.onclick = function() {
+            const text = searchInput.value;
+
+            if (text.trim() === '') {
+                alert('لطفاً چیزی برای جستجو بنویسید');
+            } else {
+                alert('در حال جستجوی: ' + text);
+
+                results.innerText = 'نتیجه آزمایشی برای: ' + text;
+            }
+        };
+    </script>
+
 </body>
 </html>
