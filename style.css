@@ -1,35 +1,102 @@
 body {
-    background-color: lightblue;
+    margin: 0;
+    padding: 30px 15px;
+    background: linear-gradient(135deg, #dff6ff, #f4f9ff);
+    font-family: Tahoma, Arial, sans-serif;
     font-size: 18px;
     text-align: center;
+    color: #1f2937;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 h1 {
-    font-size: 34px;
+    font-size: 38px;
+    color: #1769aa;
+    margin-bottom: 10px;
 }
 
 p {
     font-size: 18px;
+    line-height: 1.8;
 }
 
 #searchInput {
     width: 80%;
     max-width: 500px;
     box-sizing: border-box;
-    padding: 14px;
+    padding: 15px 18px;
     font-size: 18px;
-    margin: 10px;
+    margin: 15px 5px;
+    border: 2px solid #b8d8f0;
+    border-radius: 14px;
+    outline: none;
+    background-color: white;
+}
+
+#searchInput:focus {
+    border-color: #2196f3;
 }
 
 #searchButton {
-    padding: 14px 25px;
+    padding: 14px 28px;
     font-size: 18px;
     margin: 5px;
+    border: none;
+    border-radius: 14px;
+    background-color: #2196f3;
+    color: white;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #1976d2;
 }
 
 #results {
-    margin-top: 20px;
+    margin-top: 25px;
+}
+
+#results button {
+    display: block;
+    width: 90%;
+    max-width: 500px;
+    margin: 10px auto;
+    padding: 15px;
     font-size: 18px;
+    border: none;
+    border-radius: 14px;
+    background-color: white;
+    color: #1769aa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+#results button:hover {
+    background-color: #e8f4ff;
+    transform: translateY(-2px);
+}
+
+#info {
+    width: 90%;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+}
+
+#info h2 {
+    color: #1769aa;
+    margin-top: 0;
+    font-size: 27px;
+}
+
+#info p {
+    margin: 8px 0;
+    font-size: 17px;
 }
 
 .register-button {
@@ -37,5 +104,15 @@ p {
     bottom: 20px;
     left: 20px;
     padding: 14px 20px;
-    font-size: 18px;
+    font-size: 17px;
+    border: none;
+    border-radius: 14px;
+    background-color: #1769aa;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.register-button:hover {
+    background-color: #0d4f80;
 }
