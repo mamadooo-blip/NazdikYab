@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="fa">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="vieaport"
-content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>نزدیک‌یاب</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,7 +14,11 @@ content="width=device-width, initial-scale=1.0">
 
     <p>مکان ها و کسب و کار های اطراف خودت را پیدا کن</p>
 
-    <input type="text" id="searchInput" placeholder="دنبال چه مکانی می‌گردی؟">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="دنبال چه مکانی می‌گردی؟"
+    >
 
     <button id="searchButton">جستجو</button>
 
@@ -23,26 +27,56 @@ content="width=device-width, initial-scale=1.0">
     <button class="register-button">ثبت کسب و کار</button>
 
     <script>
+
         const searchInput = document.getElementById('searchInput');
         const searchButton = document.getElementById('searchButton');
         const results = document.getElementById('results');
 
         searchButton.onclick = function() {
+
             const text = searchInput.value;
 
             if (text.trim() === '') {
+
                 alert('لطفاً چیزی برای جستجو بنویسید');
+
             } else {
+
                 alert('در حال جستجوی: ' + text);
 
-                results.innerHTML = 
-    <p>رستوران نمونه ۱</p>
-    <p>رستوران نمونه ۲</p>
-    <p>رستوران نمونه ۳</p>
-;
+                if (text.includes('رستوران')) {
+
+                    results.innerHTML =
+                        '<button>رستوران نمونه ۱</button>' +
+                        '<button>رستوران نمونه ۲</button>' +
+                        '<button>رستوران نمونه ۳</button>';
+
+                } else if (text.includes('فروشگاه')) {
+
+                    results.innerHTML =
+                        '<button>فروشگاه نمونه ۱</button>' +
+                        '<button>فروشگاه نمونه ۲</button>' +
+                        '<button>فروشگاه نمونه ۳</button>';
+
+                } else if (text.includes('کافه')) {
+
+                    results.innerHTML =
+                        '<button>کافه نمونه ۱</button>' +
+                        '<button>کافه نمونه ۲</button>' +
+                        '<button>کافه نمونه ۳</button>';
+
+                } else {
+
+                    results.innerHTML = 'نتیجه‌ای پیدا نشد';
+
+                }
+
             }
+
         };
+
     </script>
 
 </body>
+
 </html>
