@@ -24,6 +24,8 @@
 
     <div id="results"></div>
 
+    <div id="info"></div>
+
     <button class="register-button">ثبت کسب و کار</button>
 
     <script>
@@ -31,6 +33,7 @@
         const searchInput = document.getElementById('searchInput');
         const searchButton = document.getElementById('searchButton');
         const results = document.getElementById('results');
+        const info = document.getElementById('info');
 
         searchButton.onclick = function() {
 
@@ -42,28 +45,54 @@
 
             } else {
 
-                alert('در حال جستجوی: ' + text);
-
                 if (text.includes('رستوران')) {
 
                     results.innerHTML =
-                        '<button>رستوران نمونه ۱</button>' +
-                        '<button>رستوران نمونه ۲</button>' +
-                        '<button>رستوران نمونه ۳</button>';
+                        '<button onclick="showInfo(\'رستوران نمونه ۱\', \'غذای ایرانی و فست فود\')">رستوران نمونه ۱</button>' +
+                        '<button onclick="showInfo(\'رستوران نمونه ۲\', \'غذاهای سنتی و ایرانی\')">رستوران نمونه ۲</button>' +
+                        '<button onclick="showInfo(\'رستوران نمونه ۳\', \'فست فود و پیتزا\')">رستوران نمونه ۳</button>';
 
                 } else if (text.includes('فروشگاه')) {
 
                     results.innerHTML =
-                        '<button>فروشگاه نمونه ۱</button>' +
-                        '<button>فروشگاه نمونه ۲</button>' +
-                        '<button>فروشگاه نمونه ۳</button>';
+                        '<button onclick="showInfo(\'فروشگاه نمونه ۱\', \'فروشگاه مواد غذایی\')">فروشگاه نمونه ۱</button>' +
+                        '<button onclick="showInfo(\'فروشگاه نمونه ۲\', \'فروشگاه لوازم خانگی\')">فروشگاه نمونه ۲</button>' +
+                        '<button onclick="showInfo(\'فروشگاه نمونه ۳\', \'فروشگاه عمومی\')">فروشگاه نمونه ۳</button>';
 
                 } else if (text.includes('کافه')) {
 
                     results.innerHTML =
-                        '<button>کافه نمونه ۱</button>' +
-                        '<button>کافه نمونه ۲</button>' +
-                        '<button>کافه نمونه ۳</button>';
+                        '<button onclick="showInfo(\'کافه نمونه ۱\', \'انواع نوشیدنی و دسر\')">کافه نمونه ۱</button>' +
+                        '<button onclick="showInfo(\'کافه نمونه ۲\', \'قهوه و کیک\')">کافه نمونه ۲</button>' +
+                        '<button onclick="showInfo(\'کافه نمونه ۳\', \'کافه و فست فود\')">کافه نمونه ۳</button>';
+
+                } else if (text.includes('آرایشگاه')) {
+
+                    results.innerHTML =
+                        '<button onclick="showInfo(\'آرایشگاه نمونه ۱\', \'اصلاح مو و خدمات زیبایی\')">آرایشگاه نمونه ۱</button>' +
+                        '<button onclick="showInfo(\'آرایشگاه نمونه ۲\', \'اصلاح مو و خدمات مردانه\')">آرایشگاه نمونه ۲</button>' +
+                        '<button onclick="showInfo(\'آرایشگاه نمونه ۳\', \'خدمات زیبایی و آرایشی\')">آرایشگاه نمونه ۳</button>';
+
+                } else if (text.includes('میوه')) {
+
+                    results.innerHTML =
+                        '<button onclick="showInfo(\'میوه فروشی نمونه ۱\', \'فروش انواع میوه تازه\')">میوه فروشی نمونه ۱</button>' +
+                        '<button onclick="showInfo(\'میوه فروشی نمونه ۲\', \'میوه و سبزیجات تازه\')">میوه فروشی نمونه ۲</button>' +
+                        '<button onclick="showInfo(\'میوه فروشی نمونه ۳\', \'فروش میوه و محصولات تازه\')">میوه فروشی نمونه ۳</button>';
+
+                } else if (text.includes('نانوایی')) {
+
+                    results.innerHTML =
+                        '<button onclick="showInfo(\'نانوایی نمونه ۱\', \'نان تازه و سنتی\')">نانوایی نمونه ۱</button>' +
+                        '<button onclick="showInfo(\'نانوایی نمونه ۲\', \'نان سنگک و بربری\')">نانوایی نمونه ۲</button>' +
+                        '<button onclick="showInfo(\'نانوایی نمونه ۳\', \'نان لواش و تافتون\')">نانوایی نمونه ۳</button>';
+
+                } else if (text.includes('شیرینی')) {
+
+                results.innerHTML =
+                        '<button onclick="showInfo(\'شیرینی فروشی نمونه ۱\', \'انواع شیرینی و کیک\')">شیرینی فروشی نمونه ۱</button>' +
+                        '<button onclick="showInfo(\'شیرینی فروشی نمونه ۲\', \'شیرینی تازه و کیک تولد\')">شیرینی فروشی نمونه ۲</button>' +
+                        '<button onclick="showInfo(\'شیرینی فروشی نمونه ۳\', \'انواع دسر و شیرینی\')">شیرینی فروشی نمونه ۳</button>';
 
                 } else {
 
@@ -74,6 +103,17 @@
             }
 
         };
+
+
+        function showInfo(name, description) {
+
+            info.innerHTML =
+                '<h2>' + name + '</h2>' +
+                '<p>' + description + '</p>' +
+                '<p>📍 آدرس: به زودی اضافه میشود</p>' +
+                '<p>📞 شماره تماس: به زودی اضافه میشود</p>';
+
+        }
 
     </script>
 
